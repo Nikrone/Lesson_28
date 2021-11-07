@@ -31,7 +31,7 @@ extension ViewController: UIPickerViewDelegate {
         let baraban = Baraban (rawValue: component)
         switch baraban {
         case .firstBaraban:
-            textField.text = stringArray[row]
+            textField.text = stringArray[row] 
         case .secondBaraban:
             textField.text = stringArray.reversed()[row]
         default:
@@ -50,22 +50,22 @@ extension ViewController: UIPickerViewDataSource {
     }
     
 //    если барабанов больше чем один
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        let baraban = Baraban (rawValue: component)
-//        switch baraban {
-//        case .firstBaraban:
-//            return stringArray[row]
-//        case .secondBaraban:
-//            return stringArray.reversed()[row]
-//        default:
-//            return nil
-//        }
-//    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let baraban = Baraban (rawValue: component)
+        switch baraban {
+        case .firstBaraban:
+            return stringArray[row]
+        case .secondBaraban:
+            return stringArray.reversed()[row]
+        default:
+            return nil
+        }
+    }
     
 //    кастомизация пикера
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let label = UILabel()
-        label.textColor = .red
+        label.textColor = .white
         label.backgroundColor = .orange
         
         let baraban = Baraban (rawValue: component)
