@@ -31,7 +31,7 @@ extension ViewController: UIPickerViewDelegate {
         let baraban = Baraban (rawValue: component)
         switch baraban {
         case .firstBaraban:
-            textField.text = stringArray[row] 
+            textField.text = stringArray[row]
         case .secondBaraban:
             textField.text = stringArray.reversed()[row]
         default:
